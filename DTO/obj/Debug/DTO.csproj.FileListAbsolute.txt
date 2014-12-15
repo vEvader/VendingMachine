@@ -1,0 +1,5 @@
+D:\SideProjects\VendingMachine\DTO\bin\Debug\DTO.dll
+D:\SideProjects\VendingMachine\DTO\bin\Debug\DTO.pdb
+D:\SideProjects\VendingMachine\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+D:\SideProjects\VendingMachine\DTO\obj\Debug\DTO.dll
+D:\SideProjects\VendingMachine\DTO\obj\Debug\DTO.pdb

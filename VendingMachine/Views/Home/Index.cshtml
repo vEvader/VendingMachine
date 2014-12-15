@@ -1,0 +1,55 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="container" id="VmInterface">
+    <div class="row">
+        <h3>@Resources.MainResource.ProductHeader</h3>
+        <table class="table">
+            <tbody data-bind="foreach: products">
+                <tr>
+                    <td data-bind="text: productName"></td>
+                    <td data-bind="text: price() + ' ' + $root.currencyText()"></td>
+                    <td data-bind="text: count() + ' @Resources.MainResource.CointCountText'"></td>
+                    <td><button data-bind="click: $root.buyProduct, enable: price() <= $root.enteredSum(), tooltip: {title: 'asdfasdf'}" type="button" class="btn btn-xs btn-primary">@Resources.MainResource.BuyButtonText</button></td>
+                    <td><button data-bind="click: $root.buyProduct2" type="button" class="btn btn-xs btn-primary">@Resources.MainResource.BuyButtonText</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>@Resources.MainResource.UserWalletHeader</h3>
+            <table class="table">
+                <tbody data-bind="foreach: userWallet">
+                    <tr>
+                        <td data-bind="text: denomination() + ' ' + $root.currencyText()"></td>
+                        <td data-bind="text: count() + ' @Resources.MainResource.CointCountText'"></td>
+                        <td><button data-bind="click: $root.enterCoin, enable: count() > 0" type="button" class="btn btn-xs btn-primary">@Resources.MainResource.EnterButtonText</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-4">
+            <h3>@Resources.MainResource.EnteredSumHeader</h3>
+            <div class="well" data-bind="text: enteredSum() + ' ' + currencyText()"></div>
+            <button data-bind="click: $root.returnRest, enable: enteredSum() > 0" type="button" class="btn btn-xs btn-primary">@Resources.MainResource.ReturnRestButtonText</button>
+
+        </div>
+        <div class="col-md-4">
+            <h3>@Resources.MainResource.VmWalletHeader</h3>
+            <table class="table">
+                <tbody data-bind="foreach: vmWallet">
+                    <tr>
+                        <td data-bind="text: denomination() + ' ' + $root.currencyText()"></td>
+                        <td data-bind="text: count() + ' @Resources.MainResource.CointCountText'"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section scripts
+{
+    <script type="text/javascript" src="~/Scripts/app/vm.mainInterface.js"></script>
+}

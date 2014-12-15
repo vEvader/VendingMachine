@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vending Machine</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body id="body">
+    <div class="container">
+        <div class="row">
+                <div class="text-center">
+                    <h2 class="text-center">@Resources.MainResource.VendingMachineTitle</h2>
+                </div>
+        </div>
+        <br />
+    </div>
+    
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <div class="text-center">
+                <a href="http://vladimir.klochkov.net">@Resources.MainResource.AboutAuthorLabelText</a>
+            </div>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/knockout")
+    @Scripts.Render("~/bundles/spin")
+    <script type="text/javascript" src="~/Scripts/app/vm.js"></script>
+    <script type="text/javascript" src="~/Scripts/app/vm.ajaxProxy.js"></script>
+    @RenderSection("scripts", required: false)
+    @{ Html.RenderPartial("_Resources"); }
+</body>
+</html>
+
